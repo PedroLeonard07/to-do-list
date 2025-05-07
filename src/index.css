@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: #F9F5F4;
+  overflow: hidden;
+}
+
+.container {
+  max-height: 620px;
+  width: 430px;
+  padding: 0 22px;
+  padding-top: 68px;
+  padding-bottom: 26px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 80%;
+  }
+}
+
+.list-tasks-container {
+  height: 100%;
+  width: 100%;
+
+  & h1 {
+    font-size: 36px;
+    font-weight: bold;
+    padding-left: 16px;
+    padding-right: 220px;
+  }
+
+  & .spacer {
+    height: 32px;
+  }
+}
+
+.tasks-wrapper {
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  mask-image: linear-gradient(to bottom, transparent, black 5%, black 95%, transparent);
+  width: 100%;
+  max-height: 411px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  overflow-y: hidden;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.tasks-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.tasks-completed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  overflow-y: hidden;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.completed-title {
+  color: #D1A28B;
+  margin-left: 16px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.taskCard {
+  padding: 16px;
+  border-radius: 12px;
+  background: #F3EFEE;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  & div {
+    display: flex;
+    gap: 16px;
+  }
+
+  & p {
+    font-size: 17px;
+    font-weight: normal;
+  }
+}
+
+.taskCard-completed {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #0000001A;
+  background: #F7F7F7;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  & div {
+    display: flex;
+    gap: 16px;
+  }
+
+  & p {
+    color: #393433;
+  }
+}
+
+label {
+  border: 1px solid #9F9F9F;
+  height: 17px;
+  width: 17px;
+  border-radius: 5.99px;
+  padding: 1px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label-completed {
+  background-color: #9F9F9F;
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+}
+
+.checkbox:checked + label {
+  background-color: #9F9F9F;
+}
+
+.svg {
+  display: flex;
+  align-items: center;
+}
+
+.trashsvg {
+  cursor: pointer;
+  height: 21px;
+  width: 21px;
+}
+
+.form-add {
+  height: 39px;
+  width: 100%;
+  display: flex;
+  gap: 12px;
+
+  & input {
+    height: 100%;
+    width: 77%;
+    padding: 14px 21px;
+    background: #F3EFEE;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+  }
+
+  & button {
+    height: 100%;
+    flex-grow: 1;
+    background: #393433;
+    color: #ffffff;
+    border-radius: 12px;
+    border: none;
+  }
+}
